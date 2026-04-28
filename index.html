@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Never miss a goal with Live Football Highlights. The ultimate destination for live football highlights, instantly catch up on match recaps, stunning goals, and key moments from every major league.">
+    <meta name="keywords" content="football highlights, live football, soccer highlights, match recaps, goals, football videos, sports highlights, premier league, la liga, champions league">
+    <meta name="author" content="Live Football Highlights">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Live Football Highlights - Never Miss a Goal">
+    <meta property="og:description" content="The ultimate destination for live football highlights. Instantly catch up on match recaps, stunning goals, and key moments from every major league.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Live Football Highlights - Never Miss a Goal">
+    <meta property="twitter:description" content="The ultimate destination for live football highlights. Instantly catch up on match recaps, stunning goals, and key moments from every major league.">
+    <meta property="twitter:image" content="https://yourdomain.com/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Live Football Highlights - Never Miss a Goal | Watch Match Recaps Instantly</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-green: #00ff88;
+            --accent-green-dark: #00cc6f;
+            --border-color: #1f1f1f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-green);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: var(--accent-green);
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .video-container {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .scorebat-credit {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .scorebat-credit a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        /* Features Section */
+        .section {
+            max-width: 1200px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background: var(--bg-card);
+            padding: 6rem 2rem;
+            margin: 8rem 0;
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-green);
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Live Football Highlights",
+        "description": "Never miss a goal with Live Football Highlights. The ultimate destination for live football highlights.",
+        "url": "https://yourdomain.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yourdomain.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "Live Football Highlights",
+        "sport": "Soccer",
+        "description": "Platform for live football highlights and match recaps from major leagues worldwide"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">⚽</div>
+                Live Football Highlights
+            </a>
+            <ul class="nav-links">
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#player">TV Player</a></li>
+                <li><a href="#bookmarks">Bookmarks</a></li>
+                <li><a href="#worldwide">Worldwide</a></li>
+                <li><a href="#telegram">Telegram</a></li>
+                <li><a href="#email">Email</a></li>
+                <li><a href="#mypage">My Page List</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>
+            Never miss a goal with<br>
+            <span class="highlight">Live Football Highlights</span>
+        </h1>
+        <p>
+            The ultimate destination for live football highlights. Instantly catch up on match 
+            recaps, stunning goals, and key moments from every major league.
+        </p>
+        <a href="#player" class="cta-button">Learn More</a>
+    </section>
+
+    <!-- Video Player Section -->
+    <section class="video-section" id="player">
+        <div class="video-container">
+            <iframe src="https://www.scorebat.com/embed/videopanel/?token=MjkyMDQ0XzE3NzczNDM2NzhfMTQ3OTNmMjQ4YTdmMDczM2EyMjk5MTI5MmE1NzJlMWE3ZjUwYTk3YQ==&pref=%7B%22autoplay%22%3Atrue%7D" frameborder="0" allowfullscreen allow="autoplay; fullscreen" width="600" height="760" style="display:block;background-color:rgb(17,17,17);border-radius:12px;width:100%;height:800px;" class="_scorebatEmbeddedPanel_"></iframe>
+        </div>
+        <p class="scorebat-credit">Live highlights powered by <a href="https://www.scorebat.com" target="_blank" rel="noopener">ScoreBat</a> • Video content subject to copyright</p>
+    </section>
+
+    <!-- Personal Broadcast Center Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Your personal<br>broadcast center.</h2>
+            <p>
+                Live Football Highlights is built to bring live football straight to your screen. 
+                We source the official ScoreBat API to give you quality content all in one place.
+            </p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎥</div>
+                <h3>Video Highlights</h3>
+                <p>
+                    Forget navigating isolated sports sites loaded with ads. Our platform is 
+                    streamlined for speed, making it incredibly easy to find exactly what they created.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Instant Updates</h3>
+                <p>
+                    Get real-time notifications and updates for your favorite teams and leagues. 
+                    Never miss a moment of the action.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wired Into Action Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Wired directly<br>into the action.</h2>
+            <p>
+                Live Football Highlights works by continuously querying the ScoreBat API. 
+                Whenever a match finishes (or a notable clip is created), we pull what's 
+                new from the API, ready to see on the background, rendering it perfectly 
+                playback live, here on our dashboard.
+            </p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Sports API</h3>
+                <p>
+                    Integrated directly with ScoreBat's comprehensive sports API for 
+                    real-time match data and highlights.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Automated Fetching</h3>
+                <p>
+                    Our system automatically fetches and updates match highlights as 
+                    soon as they become available.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Organized Layout</h3>
+                <p>
+                    All highlights are organized in an easy-to-navigate layout for 
+                    optimal user experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="section-header">
+                <h2>From zero to<br>highlight in seconds.</h2>
+                <p>Getting started with Live Football Highlights is incredibly simple.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Open the Hub</h3>
+                    <p>
+                        Launch Live Football Highlights to see instant access to the latest highlights 
+                        from across the world of football.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Browse the Feed</h3>
+                    <p>
+                        Scroll through the feed and explore the latest highlights and choose 
+                        from any league to find the best recaps and clips instantly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Select a Match</h3>
+                    <p>
+                        Click on any match card and wait. You'll be taken to the full-match 
+                        and the teams involved and the latest of the live offering.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Watch the Action</h3>
+                    <p>
+                        Watch seamlessly within your browser. Instantly. No sign-up. No extra 
+                        hoops, and zero wires-high-quality highlights without interruption.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about how Live Football Highlights works.</p>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How often are the Live Football Highlights videos updated?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Our platform continuously queries the ScoreBat API in real-time. New highlights 
+                    are automatically fetched and displayed as soon as matches finish or notable 
+                    moments are created.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Is Live Football Highlights mobile friendly?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Yes! Live Football Highlights is fully responsive and optimized for all devices 
+                    including smartphones, tablets, and desktop computers.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Is it free to use Live Football Highlights?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Absolutely! Live Football Highlights is completely free to use. No subscription, 
+                    no sign-up required - just instant access to football highlights.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What football leagues are covered?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We cover all major football leagues worldwide including Premier League, La Liga, 
+                    Serie A, Bundesliga, Ligue 1, Champions League, and many more through our ScoreBat 
+                    integration.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What is the video quality of the highlights?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    All highlights are provided in high definition quality directly from ScoreBat's 
+                    official sources, ensuring the best viewing experience possible.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I find a specific match on Live Football Highlights?
+                <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Simply browse through the feed or use the league filters to find specific matches. 
+                    All highlights are organized by date and league for easy navigation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#step-by-step">Step-by-Step Guide</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Internal Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#highlights">Live Highlights</a></li>
+                    <li><a href="#bookmarks">Bookmarks</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>External Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.scorebat.com" target="_blank" rel="noopener">ScoreBat API</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Live Football Highlights</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    Never miss a goal. Your personal broadcast center for live football highlights 
+                    from around the world.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Live Football Highlights. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Video content powered by <a href="https://www.scorebat.com" target="_blank" rel="noopener" style="color: var(--accent-green); text-decoration: none;">ScoreBat</a></p>
+        </div>
+    </footer>
+
+    <!-- ScoreBat Script -->
+    <script>
+    (function(d,w,s,id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); 
+        js.id = id;
+        js.src = 'https://www.scorebat.com/embed/panelx.js?v=f4fksn'
+        fjs.parentNode.insertBefore(js, fjs);
+        w.SCOREBAT_OPTIONS = {
+            panelClassName: '_scorebatEmbeddedPanel_',
+            panelSizing: 'responsive',
+        }
+    })(document, window, 'script', 'scorebat-paneljs');
+    </script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(10, 10, 10, 0.98)';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '2rem';
+            navLinks.style.borderTop = '1px solid var(--border-color)';
+        });
+    </script>
+</body>
+</html>
